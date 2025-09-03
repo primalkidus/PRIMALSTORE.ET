@@ -1,0 +1,29 @@
+
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Primal Store</title>
+<link rel="stylesheet" href="styles.css"><script defer src="app.js"></script></head><body>
+<header class="container"><div class="header-inner"><div class="brand"><img src="logo.jpg" alt="logo"><h1>Primal Store</h1></div><div class="nav"><a href="index.html"><img src="icon-home.svg" style="width:20px;vertical-align:middle"> Home</a><a href="login.html"><img src="icon-user.svg" style="width:18px;vertical-align:middle"> Account</a><a class="btn" href="checkout.html"><img src="icon-cart.svg" style="width:18px;vertical-align:middle"> Cart</a></div></div></header>
+<canvas id="goldSnow"></canvas><div class="moving-bg"></div>
+<main class="container"><h2>Game Top-ups</h2><div class="grid">
+<a class="tile" href="pubg.html"><img src="pubg.svg"><div class="name">PUBG Mobile UC</div></a>
+</div>
+<h2>Gift Cards</h2><div class="grid">
+<a class="tile" href="pubg.html"><img src="pubg.svg"><div class="name">PUBG</div></a>
+<a class="tile" href="playstation.html"><img src="playstation.svg"><div class="name">PLAYSTATION</div></a>
+<a class="tile" href="xbox.html"><img src="xbox.svg"><div class="name">XBOX</div></a>
+<a class="tile" href="steam.html"><img src="steam.svg"><div class="name">STEAM</div></a>
+<a class="tile" href="amazon.html"><img src="amazon.svg"><div class="name">AMAZON</div></a>
+<a class="tile" href="ebay.html"><img src="ebay.svg"><div class="name">EBAY</div></a>
+<a class="tile" href="apple.html"><img src="apple.svg"><div class="name">APPLE</div></a>
+<a class="tile" href="nintendo.html"><img src="nintendo.svg"><div class="name">NINTENDO</div></a>
+<a class="tile" href="hulu.html"><img src="hulu.svg"><div class="name">HULU</div></a>
+<a class="tile" href="roblox.html"><img src="roblox.svg"><div class="name">ROBLOX</div></a>
+
+</div></main>
+<footer class="footer container">Phone: +251 921 328 839 · Email: primalstore.et@gmail.com · Addis Ababa, Ethiopia</footer>
+<script>
+// simple gold snow canvas init (same as app.js but ensure canvas exists)
+(function(){ const c=document.getElementById('goldSnow'); if(!c) return; const ctx=c.getContext('2d'); function size(){ c.width=innerWidth; c.height=innerHeight } size(); addEventListener('resize', size); const flakes=Array.from({length:160}).map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,r:1+Math.random()*3,s:0.2+Math.random()*1,o:0.25+Math.random()*0.6})); function draw(){ ctx.clearRect(0,0,c.width,c.height); for(const f of flakes){ ctx.beginPath(); ctx.arc(f.x,f.y,f.r,0,Math.PI*2); ctx.fillStyle='rgba(34,30,0,'+f.o+')'; ctx.fill(); f.y+=f.s; f.x+=Math.sin(f.y*0.01)*0.3; if(f.y>c.height+5){ f.y=-5; f.x=Math.random()*c.width } } requestAnimationFrame(draw); } draw(); })();
+</script>
+</body></html>
